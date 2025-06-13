@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  couchdb:
+    build: .
+    container_name: couchdb_hotel
+    ports:
+      - "5984:5984"
+    volumes:
+      - couchdata:/data
+    environment:
+      - COUCHDB_USER=jorge
+      - COUCHDB_PASSWORD=jorge123
+
+volumes:
+  couchdata:
